@@ -18,6 +18,7 @@ const UploadImage = ({ onImageUpload, onBackToHome }) => {
   const [showCamera, setShowCamera] = useState(false);
   const [analysisResult, setAnalysisResult] = useState(null);
   const webcamRef = useRef(null);
+  const [cameraFacingMode, setCameraFacingMode] = useState('user');
 
   // Clear state when the component mounts
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -177,10 +178,14 @@ const UploadImage = ({ onImageUpload, onBackToHome }) => {
     return new Blob([ab], { type: mimeString });
   };
 
+  const toggleCamera = () => {
+    setCameraFacingMode((prevMode) => (prevMode === 'user' ? 'environment' : 'user'));
+  };
+
   return (
     <div className="upload-section">
       {/* Back to Homepage Button */}
-      <button className="back-home-button" onClick={onBackToHome}>
+      <button className="back-to-homepage" onClick={onBackToHome}>
         Back to Homepage
       </button>
 
@@ -207,9 +212,13 @@ const UploadImage = ({ onImageUpload, onBackToHome }) => {
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
+            videoConstraints={{ facingMode: cameraFacingMode }}
             className="webcam"
           />
           <div className="camera-controls">
+            <button className="action-button toggle" onClick={toggleCamera}>
+              Switch Camera
+            </button>
             <button className="action-button capture" onClick={captureImage}>
               Capture
             </button>

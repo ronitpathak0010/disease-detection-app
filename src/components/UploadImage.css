@@ -72,10 +72,10 @@
 
 .crop-input {
   width: 100%;
-  padding: 0.8rem 3rem 0.8rem 1rem;
+  padding: 10px;
+  font-size: 16px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -1081,6 +1081,36 @@
       width: 32px;
       height: 32px;
       font-size: 0.9rem;
+    }
+}
+
+/* Hide the button on mobile devices */
+@media (max-width: 768px) {
+    .back-to-homepage {
+        display: none !important;
+    }
+}
+
+/* Show the button on larger screens with existing styles */
+@media (min-width: 769px) {
+    .back-to-homepage {
+        display: inline-block;
+        background-color: rgb(29, 150, 29);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        
+        /* Align to top left corner */
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    .back-to-homepage:hover {
+        background-color: lightseagreen;
     }
 }
 
