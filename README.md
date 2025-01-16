@@ -43,42 +43,49 @@ diagnostic information is presented to the user.
 PSEUDO CODE:
  
 START 
+
 //Initialize application 
+
 FUNCTION initializeApp() 
-    SET up user interface 
-    SET up event listeners for buttons 
+SET up user interface 
+SET up event listeners for buttons 
 END FUNCTION 
  
+
 // Function to handle file selection 
 FUNCTION onChooseFile() 
-    DISPLAY file chooser dialog 
-    IF file is selected THEN 
-        UPLOAD file 
-        DISPLAY file name 
-    END IF 
+DISPLAY file chooser dialog 
+IF file is selected THEN 
+UPLOAD file 
+DISPLAY file name 
+END IF 
 END FUNCTION 
  
+
 // Function to handle image capture 
 FUNCTION onCaptureImage() 
-    OPEN camera interface 
-    IF image is captured THEN 
-        UPLOAD captured image 
-        DISPLAY image preview 
-    END IF 
+OPEN camera interface 
+IF image is captured THEN 
+UPLOAD captured image 
+DISPLAY image preview 
+END IF 
 END FUNCTION 
   
+
 // Function to analyze uploaded image 
 FUNCTION analyzeImage(image) 
-    SEND image to server for analysis 
-    RECEIVE analysis results 
-    DISPLAY results to user 
+SEND image to server for analysis 
+RECEIVE analysis results 
+DISPLAY results to user 
 END FUNCTION 
  
+
 // Function to handle back to homepage action 
 FUNCTION onBackToHome() 
-    NAVIGATE to homepage 
+NAVIGATE to homepage 
 END FUNCTION 
  
+
 // Main application flow 
 FUNCTION main() 
     CALL initializeApp() 
